@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía Fitness Club</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#hero" class="logo">ENERGÍA<span>FITNESS</span></a>
+            <ul class="nav-links">
+                <li><a href="#disciplinas">Disciplinas</a></li>
+                <li><a href="#calculadora">Membresías</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#entrenadores">Entrenadores</a></li>
+                <li><a href="#inscripcion">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== HERO ===== -->
+        <section id="hero" class="hero">
+            <div class="hero-contenido">
+                <h1>TU ÚNICO LÍMITE<br>SOS VOS</h1>
+                <p>Bienvenido a Energía Fitness Club, el lugar donde empieza tu mejor versión.</p>
+                <a href="#inscripcion" class="btn btn-principal">Empezar Hoy</a>
+            </div>
+        </section>
+
+        <!-- ===== POR QUÉ ELEGIRNOS ===== -->
+        <section id="porque" class="seccion seccion-oscura">
+            <h2>¿Por qué elegirnos?</h2>
+            <div class="grid-porque">
+                <article class="card-porque">
+                    <h3>Entrenadores Certificados</h3>
+                    <p>Profesionales capacitados para acompañarte en cada paso.</p>
+                </article>
+                <article class="card-porque">
+                    <h3>Equipamiento Nuevo</h3>
+                    <p>Máquinas modernas y en excelente condición.</p>
+                </article>
+                <article class="card-porque">
+                    <h3>Ambiente Familiar</h3>
+                    <p>Un lugar donde te vas a sentir cómodo el primer día.</p>
+                </article>
+                <article class="card-porque">
+                    <h3>Horarios Flexibles</h3>
+                    <p>Abrimos temprano y cerramos tarde para que entrenes cuando puedas.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== DISCIPLINAS ===== -->
+        <section id="disciplinas" class="seccion">
+            <h2>Nuestras Disciplinas</h2>
+            <p class="subtitulo">Hacé clic en una disciplina para ver el detalle</p>
+
+            <div class="grid-disciplinas">
+                <article class="card-disciplina"
+                    data-nombre="Musculación"
+                    data-intensidad="Media"
+                    data-equipo="Ropa deportiva, toalla, botella de agua"
+                    data-contra="Lesiones articulares no rehabilitadas, hipertensión no controlada">
+                    <h3>Musculación</h3>
+                    <p>Acceso completo a la sala de mancuernas y máquinas.</p>
+                </article>
+
+                <article class="card-disciplina"
+                    data-nombre="Funcional"
+                    data-intensidad="Alta"
+                    data-equipo="Calzado deportivo, toalla, botella de agua"
+                    data-contra="Problemas cardíacos, lesiones de rodilla o columna">
+                    <h3>Funcional</h3>
+                    <p>Entrenamiento con el peso del cuerpo y elementos.</p>
+                </article>
+
+                <article class="card-disciplina"
+                    data-nombre="Spin"
+                    data-intensidad="Alta"
+                    data-equipo="Calzas o short ajustado, toalla, mucha agua"
+                    data-contra="Problemas cardíacos, lesiones de rodilla">
+                    <h3>Spin</h3>
+                    <p>Ciclismo indoor con música y coach en vivo.</p>
+                </article>
+
+                <article class="card-disciplina"
+                    data-nombre="Crossfit"
+                    data-intensidad="Muy Alta"
+                    data-equipo="Calzado firme, guantes o magnesio, toalla"
+                    data-contra="Sin experiencia previa sin evaluación, lesiones de hombro o columna">
+                    <h3>Crossfit</h3>
+                    <p>Alta intensidad, fuerza y resistencia al límite.</p>
+                </article>
+                <article class="card-disciplina"
+                    data-nombre="Yoga"
+                    data-intensidad="Baja a Media"
+                    data-equipo="Mat de yoga, ropa cómoda y elástica, toalla"
+                    data-contra="Embarazo sin autorización médica, lesiones de columna o muñeca no rehabilitadas">
+                    <h3>Yoga</h3>
+                    <p>Flexibilidad, respiración y equilibrio para cuerpo y mente.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== CALCULADORA ===== -->
+        <section id="calculadora" class="seccion seccion-oscura">
+            <h2>Calculá tu Membresía</h2>
+            <p class="subtitulo">Armá tu plan y mirá el precio al instante</p>
+
+            <div class="calculadora">
+                <div class="calc-opciones">
+                    <fieldset>
+                        <legend>Tipo de pase</legend>
+                        <label>
+                            <input type="radio" name="pase" value="35000" checked>
+                            Pase Libre <span class="precio">$35.000</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="pase" value="25000">
+                            3 Días por Semana <span class="precio">$25.000</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="pase" value="25000">
+                            Estudiantil <span class="precio">$25.000</span>
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Adicionales</legend>
+                        <label>
+                            <input type="checkbox" name="adicional" value="8000">
+                            Nutricionista <span class="precio">+$8.000</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="adicional" value="15000">
+                            Personal Trainer <span class="precio">+$15.000</span>
+                        </label>
+                    </fieldset>
+                </div>
+
+                <div class="calc-total">
+                    <p>Tu cuota mensual</p>
+                    <span id="total">$35.000</span>
+                    <a href="#inscripcion" class="btn btn-principal">Quiero este plan</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== HORARIOS ===== -->
+        <section id="horarios" class="seccion">
+            <h2>Grilla de Horarios</h2>
+
+            <div class="filtros">
+                <button class="btn-filtro activo" data-filtro="todos">Todos</button>
+                <button class="btn-filtro" data-filtro="lunes">Lunes</button>
+                <button class="btn-filtro" data-filtro="martes">Martes</button>
+                <button class="btn-filtro" data-filtro="miercoles">Miércoles</button>
+                <button class="btn-filtro" data-filtro="jueves">Jueves</button>
+                <button class="btn-filtro" data-filtro="viernes">Viernes</button>
+                <button class="btn-filtro" data-filtro="musculacion">Musculación</button>
+                <button class="btn-filtro" data-filtro="crossfit">Crossfit</button>
+                <button class="btn-filtro" data-filtro="spin">Spin</button>
+                <button class="btn-filtro" data-filtro="funcional">Funcional</button>
+                <button class="btn-filtro" data-filtro="yoga">Yoga</button>
+            </div>
+
+            <table class="tabla-horarios">
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Horario</th>
+                        <th>Disciplina</th>
+                        <th>Profesor</th>
+                    </tr>
+                </thead>
+                   <tbody id="cuerpo-horarios">
+    <tr data-dia="lunes" data-disciplina="crossfit">
+        <td>Lunes</td><td>08:00</td><td>Crossfit</td><td>Lucas Peralta</td>
+    </tr>
+    <tr data-dia="lunes" data-disciplina="musculacion">
+        <td>Lunes</td><td>15:00</td><td>Musculación</td><td>Ramiro Vera</td>
+    </tr>
+    <tr data-dia="martes" data-disciplina="spin">
+        <td>Martes</td><td>09:00</td><td>Spin</td><td>Carlos Muñoz</td>
+    </tr>
+    <tr data-dia="martes" data-disciplina="funcional">
+        <td>Martes</td><td>18:30</td><td>Funcional</td><td>Lucas Peralta</td>
+    </tr>
+    <tr data-dia="miercoles" data-disciplina="crossfit">
+        <td>Miércoles</td><td>08:00</td><td>Crossfit</td><td>Lucas Peralta</td>
+    </tr>
+    <tr data-dia="miercoles" data-disciplina="musculacion">
+        <td>Miércoles</td><td>10:00</td><td>Musculación</td><td>Ramiro Vera</td>
+    </tr>
+    <tr data-dia="miercoles" data-disciplina="yoga">
+        <td>Miércoles</td><td>19:00</td><td>yoga</td><td>Carla Domínguez</td>
+    </tr>
+    <tr data-dia="jueves" data-disciplina="spin">
+        <td>Jueves</td><td>09:00</td><td>Spin</td><td>Carlos Muñoz</td>
+    </tr>
+    <tr data-dia="jueves" data-disciplina="funcional">
+        <td>Jueves</td><td>20:00</td><td>Funcional</td><td>Lucas Peralta</td>
+    </tr>
+    <tr data-dia="viernes" data-disciplina="crossfit">
+        <td>Viernes</td><td>08:00</td><td>Crossfit</td><td>Lucas Peralta</td>
+    </tr>
+    <tr data-dia="viernes" data-disciplina="yoga">
+    <td>Viernes</td><td>10:00</td><td>Yoga</td><td>Carla Domínguez</td>
+    </tr>
+    <tr data-dia="viernes" data-disciplina="spin">
+        <td>Viernes</td><td>20:00</td><td>Spin</td><td>Carla Domínguez</td>
+    </tr>
+</tbody>
+            </table>
+
+            <p class="nota-horarios">
+                Sala de musculación abierta de Lunes a Viernes de 8:00 a 22:00 hs
+                y Sábados de 9:00 a 20:30 hs. Domingo cerrado.
+            </p>
+        </section>
+
+        <!-- ===== ENTRENADORES ===== -->
+        <section id="entrenadores" class="seccion seccion-oscura">
+            <h2>Nuestros Entrenadores</h2>
+
+            <div class="grid-entrenadores">
+                <article class="card-entrenador">
+                    <h3>Lucas Peralta</h3>
+                    <p class="especialidad">Crossfit y Funcional</p>
+                    <p>10 años de experiencia. Certificado en levantamiento olímpico.</p>
+                </article>
+                <article class="card-entrenador">
+                    <h3>Carla Domínguez</h3>
+                    <p class="especialidad">Spin y Cardio</p>
+                    <p>Ex ciclista competitiva, especialista en resistencia.</p>
+                </article>
+                <article class="card-entrenador">
+                    <h3>Ramiro Vera</h3>
+                    <p class="especialidad">Musculación</p>
+                    <p>Licenciado en Educación Física, enfocado en hipertrofia.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== INSCRIPCIÓN + UBICACIÓN ===== -->
+        <section id="inscripcion" class="seccion">
+            <h2>Tu Primera Clase es Gratis</h2>
+            <p class="subtitulo">Dejanos tus datos y te contactamos</p>
+
+            <div class="bloque-contacto">
+
+                <form id="formulario" class="formulario" novalidate>
+                    <div class="campo">
+                        <label for="nombre">Nombre y Apellido</label>
+                        <input type="text" name="nombre" id="nombre">
+                        <span class="error" id="error-nombre"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="dni">DNI</label>
+                        <input type="text" name="dni" id="dni" placeholder="12345678">
+                        <span class="error" id="error-dni"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" name="telefono" id="telefono" placeholder="3794123456">
+                        <span class="error" id="error-telefono"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">Correo electrónico</label>
+                        <input type="text" name="email" id="email" placeholder="tunombre@mail.com">
+                        <span class="error" id="error-email"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="disciplina">Disciplina de interés</label>
+                        <select name="disciplina" id="disciplina">
+                            <option value="musculacion">Musculación</option>
+                            <option value="funcional">Funcional</option>
+                            <option value="spin">Spin</option>
+                            <option value="crossfit">Crossfit</option>
+                            <option value="yoga">Yoga</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-principal">Solicitar Pase Gratis</button>
+                    <p class="exito" id="mensaje-exito"></p>
+                </form>
+
+                <div class="bloque-mapa">
+                    <h3>¿Dónde estamos?</h3>
+                    <div class="mapa">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d215.40150653287108!2d-57.6422216!3d-30.2534952!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1787249174892!5m2!1ses!2sar"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
+                    </div>
+                    <p>También podés escribirnos directo por WhatsApp y armamos tu plan a medida.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== MODAL ===== -->
+    <div class="modal" id="modal">
+        <div class="modal-contenido">
+            <button class="cerrar-modal" id="cerrar-modal">&times;</button>
+            <h3 id="modal-titulo"></h3>
+            <p><strong>Nivel de intensidad:</strong> <span id="modal-intensidad"></span></p>
+            <p><strong>Equipamiento necesario:</strong> <span id="modal-equipo"></span></p>
+            <p><strong>Contraindicaciones:</strong> <span id="modal-contra"></span></p>
+        </div>
+    </div>
+
+    <!-- ===== BOTÓN FLOTANTE WHATSAPP ===== -->
+    <a href="https://wa.me/5490000000000" class="wsp-flotante" target="_blank" aria-label="Escribinos por WhatsApp">
+        <img src="img/whatsaap.png" alt="WhatsApp">
+    </a>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p class="footer-logo">ENERGÍA<span>FITNESS</span></p>
+        <p>Tu único límite sos vos</p>
+        <p>&copy; 2026 Energía Fitness Club. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,650 @@
+/* =========================================================
+   ENERGÍA FITNESS CLUB — estilo.css
+   Paleta de la consigna: negro, amarillo neón, gris, blanco
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap");
+
+/* ---------- VARIABLES ----------
+   Se definen una sola vez y se usan con var(--nombre).
+   Si mañana querés cambiar un color, lo cambiás acá y listo. */
+:root {
+    --negro: #121212;
+    --gris: #242424;
+    --gris-claro: #3a3a3a;
+    --amarillo: #d4ff00;
+    --blanco: #ffffff;
+    --texto-suave: #b8b8b8;
+    --error: #ff6b6b;
+
+    --fuente-titulos: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+    --fuente-texto: "Barlow", Arial, sans-serif;
+
+    --ancho-max: 1100px;
+    --alto-header: 70px;
+}
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--negro);
+    color: var(--blanco);
+    font-family: var(--fuente-texto);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Que se vea bien con el teclado (accesibilidad) */
+:focus-visible {
+    outline: 3px solid var(--amarillo);
+    outline-offset: 3px;
+}
+
+/* ---------- HEADER / NAV ---------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--negro);
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.nav {
+    max-width: var(--ancho-max);
+    height: var(--alto-header);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--fuente-titulos);
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--amarillo);
+    margin-left: 6px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--amarillo);
+    border-bottom-color: var(--amarillo);
+}
+
+/* ---------- BOTONES ---------- */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-family: var(--fuente-titulos);
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-principal {
+    background-color: var(--amarillo);
+    color: var(--negro);
+}
+
+.btn-principal:hover {
+    background-color: var(--negro);
+    color: var(--amarillo);
+    border-color: var(--amarillo);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    min-height: calc(100vh - var(--alto-header));
+    display: flex;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: var(--negro);
+    background-image:
+    linear-gradient(90deg, rgba(18, 18, 18, 0.92) 0%, rgba(18, 18, 18, 0.6) 60%, rgba(18, 18, 18, 0.35) 100%),
+    url("../img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    scroll-margin-top: var(--alto-header);
+}
+
+.hero-contenido {
+    max-width: var(--ancho-max);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 11vw, 9rem);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.hero p {
+    max-width: 520px;
+    font-size: 1.25rem;
+    color: var(--texto-suave);
+    margin-bottom: 36px;
+    padding-left: 18px;
+    border-left: 6px solid var(--amarillo);
+}
+
+/* ---------- SECCIONES (base compartida) ---------- */
+.seccion {
+    padding: 90px max(20px, calc((100% - var(--ancho-max)) / 2));
+    scroll-margin-top: var(--alto-header);
+}
+
+.seccion-oscura {
+    background-color: var(--gris);
+}
+
+.seccion h2 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    margin-bottom: 12px;
+}
+
+.subtitulo {
+    color: var(--texto-suave);
+    margin-bottom: 40px;
+}
+
+/* ---------- POR QUÉ ELEGIRNOS (CSS Grid) ---------- */
+.grid-porque {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.card-porque {
+    background-color: var(--negro);
+    padding: 28px 24px;
+    border-top: 4px solid var(--amarillo);
+}
+
+.card-porque h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.card-porque p {
+    color: var(--texto-suave);
+}
+
+/* ---------- DISCIPLINAS (CSS Grid) ---------- */
+.grid-disciplinas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.card-disciplina {
+    background-color: var(--gris);
+    padding: 36px 26px;
+    border: 2px solid var(--gris-claro);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.card-disciplina:hover {
+    border-color: var(--amarillo);
+    transform: translateY(-6px);
+}
+
+.card-disciplina h3 {
+    font-size: 2rem;
+    color: var(--amarillo);
+    margin-bottom: 10px;
+}
+
+.card-disciplina p {
+    color: var(--texto-suave);
+}
+
+/* ---------- CALCULADORA (Flexbox) ---------- */
+.calculadora {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.calc-opciones {
+    flex: 2 1 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+fieldset {
+    background-color: var(--negro);
+    border: 2px solid var(--gris-claro);
+    border-radius: 6px;
+    padding: 20px 24px 8px;
+}
+
+legend {
+    font-family: var(--fuente-titulos);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--amarillo);
+    padding: 0 10px;
+}
+
+fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    cursor: pointer;
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+fieldset label:last-child {
+    border-bottom: none;
+}
+
+fieldset input {
+    accent-color: var(--amarillo);
+    width: 20px;
+    height: 20px;
+}
+
+.precio {
+    margin-left: auto;
+    font-weight: 600;
+    color: var(--amarillo);
+}
+
+.calc-total {
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 14px;
+    background-color: var(--amarillo);
+    color: var(--negro);
+    padding: 36px 30px;
+    border-radius: 6px;
+}
+
+.calc-total p {
+    font-weight: 600;
+}
+
+#total {
+    font-family: var(--fuente-titulos);
+    font-size: clamp(3.4rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.calc-total .btn-principal {
+    background-color: var(--negro);
+    color: var(--amarillo);
+}
+
+.calc-total .btn-principal:hover {
+    background-color: var(--blanco);
+    color: var(--negro);
+    border-color: var(--negro);
+}
+
+/* ---------- HORARIOS ---------- */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.btn-filtro {
+    font-family: var(--fuente-texto);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 9px 18px;
+    background-color: transparent;
+    color: var(--blanco);
+    border: 2px solid var(--gris-claro);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-filtro:hover {
+    border-color: var(--amarillo);
+}
+
+.btn-filtro.activo {
+    background-color: var(--amarillo);
+    color: var(--negro);
+    border-color: var(--amarillo);
+}
+
+.tabla-horarios {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-horarios th {
+    text-align: left;
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+    color: var(--amarillo);
+    padding: 14px 16px;
+    border-bottom: 3px solid var(--amarillo);
+}
+
+.tabla-horarios td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.tabla-horarios tbody tr:hover {
+    background-color: var(--gris);
+}
+
+/* La usa el JS para esconder las filas que no coinciden con el filtro */
+.oculto {
+    display: none;
+}
+
+.nota-horarios {
+    margin-top: 24px;
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+/* ---------- ENTRENADORES (CSS Grid) ---------- */
+.grid-entrenadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.card-entrenador {
+    background-color: var(--negro);
+    padding: 30px 26px;
+    border-left: 6px solid var(--amarillo);
+}
+
+.card-entrenador h3 {
+    font-size: 1.9rem;
+}
+
+.especialidad {
+    color: var(--amarillo);
+    font-weight: 600;
+    margin: 4px 0 12px;
+}
+
+.card-entrenador p:last-child {
+    color: var(--texto-suave);
+}
+
+/* ---------- INSCRIPCIÓN + MAPA (Flexbox) ---------- */
+.bloque-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.formulario {
+    flex: 1 1 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-weight: 600;
+}
+
+.campo input,
+.campo select {
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    padding: 12px 14px;
+    background-color: var(--gris);
+    color: var(--blanco);
+    border: 2px solid var(--gris-claro);
+    border-radius: 4px;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: var(--amarillo);
+}
+
+/* El JS le agrega esta clase cuando el dato está mal */
+.campo input.invalido {
+    border-color: var(--error);
+}
+
+.error {
+    min-height: 1.2em;
+    font-size: 0.9rem;
+    color: var(--error);
+}
+
+.exito {
+    color: var(--amarillo);
+    font-weight: 600;
+}
+
+.formulario .btn {
+    align-self: flex-start;
+}
+
+.bloque-mapa {
+    flex: 1 1 340px;
+}
+
+.bloque-mapa h3 {
+    font-size: 1.9rem;
+    margin-bottom: 14px;
+}
+
+.mapa {
+    aspect-ratio: 4 / 3;
+    margin-bottom: 14px;
+    border: 2px solid var(--gris-claro);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.bloque-mapa p {
+    color: var(--texto-suave);
+}
+
+/* ---------- MODAL ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+}
+
+/* El JS agrega "activo" para mostrarlo */
+.modal.activo {
+    display: flex;
+}
+
+.modal-contenido {
+    position: relative;
+    width: 90%;
+    max-width: 460px;
+    background-color: var(--gris);
+    border: 2px solid var(--amarillo);
+    border-radius: 6px;
+    padding: 34px 30px;
+}
+
+.modal-contenido h3 {
+    font-size: 2.2rem;
+    color: var(--amarillo);
+    margin-bottom: 16px;
+}
+
+.modal-contenido p {
+    margin-bottom: 10px;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: var(--blanco);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover {
+    color: var(--amarillo);
+}
+
+/* ---------- BOTÓN FLOTANTE DE WHATSAPP ---------- */
+.wsp-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.wsp-flotante img {
+    width: 28px;
+    height: 28px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+    background-color: var(--gris);
+    border-top: 4px solid var(--amarillo);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--texto-suave);
+}
+
+.footer-logo {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--blanco);
+}
+
+.footer-logo span {
+    color: var(--amarillo);
+    margin-left: 6px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .nav {
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 20px;
+    }
+
+    .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+
+    .seccion {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    /* La tabla se desliza de costado si no entra en el celular */
+    .tabla-horarios {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Respeta a quien desactivó las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
